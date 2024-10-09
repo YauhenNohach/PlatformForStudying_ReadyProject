@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../static/css/tests-students.css">
+    <script src="../static/js/tests-students.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Tests</h1>
+</header>
+<button type="button" class = "back" onclick="backToProfile()">Back to Profile</button>
+<section>
+    <div id="profile-user" class="tab-content" sec:authorize="hasAuthority('USER')">
+        <div id="student-section" class="test-section">
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

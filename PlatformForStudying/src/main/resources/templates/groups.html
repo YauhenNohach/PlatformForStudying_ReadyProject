@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Groups</title>
+    <link rel="stylesheet" href="../static/css/groups.css">
+    <script src="../static/js/groups.js" defer></script>
+</head>
+<body>
+<h1>Groups</h1>
+<ul id="groupList"></ul>
+
+<div id="groupStudents" style="display:none;">
+    <h2>Students</h2>
+    <div id="students"></div>
+
+    <div id="searchContainer">
+        <label for="searchFirstName">Firstname:</label>
+        <input type="text" id="searchFirstName" placeholder="Enter firstname">
+        <label for="searchLastName">Lastname:</label>
+        <input type="text" id="searchLastName" placeholder="Enter lastname">
+        <button id="searchButton">Search</button>
+        <button id="showAllButton">Show all students</button>
+    </div>
+</div>
+</body>
+</html>

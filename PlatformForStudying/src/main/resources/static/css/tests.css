@@ -1,0 +1,179 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/kapibara.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#all-tests {
+    text-align: center;
+}
+
+#tests-list {
+    list-style: none;
+    padding: 0;
+}
+
+#tests-list li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#tests-list li:hover {
+    background-color: #e0e0e0;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+#testContent {
+    background-color: #aaaaaa;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+select {
+    padding: 10px;
+    margin: 5px;
+}
+
+#testContent {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#testContent h2 {
+    color: #333;
+}
+
+#questionsList {
+    margin-top: 20px;
+}
+
+#assignTestButton,
+#groupSelect {
+    display: none;
+    margin-top: 20px;
+}
+
+#testTimeFormContainer {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#formTitle {
+    color: #333;
+}
+
+#testTimeForm label {
+    display: block;
+    margin: 10px 0;
+    color: #333;
+}
+
+#testTimeForm input,
+#testTimeForm select {
+    padding: 10px;
+    margin: 5px 0;
+}
+
+#testTimeForm button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#testTimeForm button:hover {
+    background-color: #45a049;
+}
+
+.divider {
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    section {
+        padding: 10px;
+    }
+}

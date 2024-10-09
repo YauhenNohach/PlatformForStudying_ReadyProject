@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Test</title>
+    <link rel="stylesheet" href="../static/css/test.css">
+    <script src="../static/js/test.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>Create Test</h1>
+    <button type="button" class = "back" onclick="backToProfile()">Back to Profile</button>
+</header>
+<section id="user-section" sec:authorize="hasAuthority('ADMIN')">
+    <label for="testName">Test Name:</label>
+    <input type="text" id="testName" name="testName" required>
+    <div id="questionTypeSelector">
+        <label>Select Question Type:</label>
+        <select id="selectQuestionType" onchange="showQuestionForm()">
+            <option value="SELECT_TYPE" selected>Select Type</option>
+            <option value="OPTION_QUESTION">Question with Options</option>
+            <option value="INPUT_QUESTION">Question with Blank</option>
+        </select>
+    </div>
+
+    <div id="questionForm">
+        <form id="testForm">
+            <label for="questionText">Question Text:</label>
+            <input type="text" id="questionText" name="questionText" required>
+
+            <div id="optionsContainer" style="display: none;">
+                <label for="answerOptions">Answer Options:</label>
+                <div id="answerOptionsContainer">
+                    <div class="optionRow">
+                        <input type="text" class="answerOption" name="answerOptions" required>
+                        <button type="button" onclick="removeOption(this)">Remove</button>
+                    </div>
+                </div>
+                <button type="button" onclick="addOption()">Add Option</button>
+            </div>
+
+            <div id="rightAnswerContainer">
+                <label for="rightAnswer">Right Answer:</label>
+                <input type="text" id="rightAnswer" name="rightAnswer">
+            </div>
+
+            <button type="button" onclick="addQuestion()">Add Question</button>
+        </form>
+    </div>
+
+    <button type="button" onclick="createTest()">Create Test</button>
+
+    <div id="questionsContainer"></div>
+</section>
+</body>
+</html>

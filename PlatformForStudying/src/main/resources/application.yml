@@ -1,0 +1,48 @@
+spring.profiles.active: qa
+server.port: 8081
+logging:
+  level:
+    root: INFO
+    org.springframework.jdbc.core: TRACE
+  file:
+    name: platform.log
+    path: /
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        hbm2ddl.auto: validate
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 293072914342-v715in0p7c8f1vqca6cgk3linmcs6sg7.apps.googleusercontent.com
+            client-secret: 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
+            redirect-uri: http://localhost:8081/login/oauth2/code/google/
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: toxiccorporationservice@gmail.com
+    password: pcflrpyowssowqcz
+
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000

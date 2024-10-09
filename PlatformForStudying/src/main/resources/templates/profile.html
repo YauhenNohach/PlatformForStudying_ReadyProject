@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <script src="../static/js/profile.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>User Profile</h1>
+</header>
+
+<section sec:authorize="hasAuthority('USER')">
+    <button type="button" onclick="navigateToAllForStudents()">All Tests</button>
+    <p><button type="button" onclick="navigateToAssignments()">All Assignments</button></p>
+</section>
+<section sec:authorize="hasAuthority('ADMIN')">
+    <div id="profile" class="tab-content" sec:authorize="hasAuthority('ADMIN')">
+        <div id="user-section">
+            <h3>Add new Group</h3>
+            <form id="createGroupForm">
+                <label for="groupName">group name:</label>
+                <input type="text" id="groupName" name="groupName" required>
+                <button type="button" onclick="createGroup()">Create group</button>
+                <button type="button" onclick="navigateToAllGroups()">All Groups</button>
+            </form>
+            <div id="createGroupMessage"></div>
+            <h3>Add new Test</h3>
+            <button type="button" onclick="navigateToCreateTest()">Create Test</button>
+            <button type="button" onclick="navigateToAllTests()">All Tests</button>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
